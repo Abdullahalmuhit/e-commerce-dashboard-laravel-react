@@ -9,6 +9,8 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $products = Product::all();
+        return $products;
 
     }
     public function store(Request $request)
@@ -17,7 +19,7 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
-        $product->file = $request->file('file')->store('products');
+        $product->file = $request->file('file')->store('public/products');
         $product->save();
         return $product;
 

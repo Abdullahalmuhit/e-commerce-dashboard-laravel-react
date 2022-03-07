@@ -23,4 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+Route::get('/list', [ProductController::class, 'index'])->name('product.list');
+
 
